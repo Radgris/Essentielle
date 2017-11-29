@@ -22,6 +22,9 @@ function createWindow () {
     slashes: true
   }))
 
+
+  if 
+
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()
 
