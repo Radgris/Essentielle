@@ -4,6 +4,8 @@ const app = electron.app
 // Module to create native browser window.
 const BrowserWindow = electron.BrowserWindow
 
+//const ipcMain = require('electron').ipcMain;
+
 const path = require('path')
 const url = require('url')
 
@@ -23,7 +25,6 @@ function createWindow () {
   }))
 
 
-  if 
 
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()
