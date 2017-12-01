@@ -4,14 +4,14 @@ const app = electron.app
 // Module to create native browser window.
 const BrowserWindow = electron.BrowserWindow
 
-const ipcMain = require('electron').ipcMain;
+const {ipcMain} = require('electron')
 
 const path = require('path')
 const url = require('url')
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
-let mainWindow
+let productoswmainWindow
 let passwordw
 let inventariow
 let adminuiw
@@ -22,19 +22,16 @@ let darbajaw
 let reportew
 
 
-function createWindow () {
+function MainW () {
   // Create the browser window.
   mainWindow = new BrowserWindow({width: 1024, height: 768})   
 
   // and load the index.html of the app.
   mainWindow.loadURL(url.format({
-    pathname: path.join(__dirname, 'inventario.html'),
+    pathname: path.join(__dirname, 'index.html'),
     protocol: 'file:',
     slashes: true
   }))
-
-
-
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()
 
@@ -48,11 +45,32 @@ function createWindow () {
 
   })
 }
+function Passw () {
+  passwordw = new BrowserWindow({width: 1024, height: 768})   
+  passwordw.loadURL(url.format({
+    pathname: path.join(__dirname, 'password.html'),
+    protocol: 'file:',
+    slashes: true
+  }))
+
+  passwordw.on('closed', function () {
+    passwordw = null
+  })
+}
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
-app.on('ready', createWindow)
+app.on('ready', MainW)
+
+ipcMain.on('loadpage', (event, arg) => {
+    app.on('ready', arg)
+    
+})
+
+
+//app.on('ready', Passw)
+
 
 // Quit when all windows are closed.
 app.on('window-all-closed', function () {

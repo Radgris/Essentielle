@@ -21,6 +21,8 @@ $('#n1').on('click', () => {
    count1 --
    $('#p1').text(count1)
 }) 
+$('#p1').text(count1.toString())
+
 
 $('#p2').text(count2.toString())
 $('#m2').on('click', () => {
