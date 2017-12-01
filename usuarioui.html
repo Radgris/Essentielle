@@ -3,19 +3,34 @@
   <head>
     <meta charset="UTF-8">
     <title>Essentielle App</title>
-    <style>body{background-color: #1B2737} </style>
-    <link rel = "stylesheet" 
-    href = "./bower_components/bootstrap/dist/css/bootstrap.min.css" />
-    
+    <style>
+		body{
+			color: white; 
+			font-family: 'Open Sans', sans-serif; 
+			font-size:12px;
+			}
+		button{
+			font-family: 'Roboto', sans-serif; 
+			background-color:#1B2737; 
+			color:#FFFFFF; 
+			border-radius:10px;
+			box-shadow: 5px 5px #D1D1D1;
+			}
+		button:hover{
+			background-color:#151E29;
+		}
+		button:active{
+			transform:translateY(2px);
+		}
+    </style>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet"> 
 </head>
 
-   <body style = "color: white", font-family: "bodoni MT">
+   <body>
    
     
    <h1><center><img src = "./essentielle2" alt = "logo" /></center></h1>
    <h2><center><button id = "Inventario" style="height:75px; width:150px">Inventario</button>
    <button id = "Vender" style="height:75px; width:150px">Vender</button>
-
-
   </body>
 </html>
